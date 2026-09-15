@@ -1,0 +1,26 @@
+@model List<Character>
+
+<h1>The Hobbit Characters</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Race</th>
+            <th>Homeland</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var character in Model)
+        {
+            <tr>
+                <td>@character.Name</td>
+                <td>@character.Race</td>
+                <td>@character.HomeLand</td>
+                <td>@character.Age</td>
+            </tr>
+        }
+    </tbody>
+</table>
