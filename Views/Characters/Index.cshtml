@@ -9,6 +9,7 @@
             <th>Race</th>
             <th>Homeland</th>
             <th>Age</th>
+            <th>Details</th>
         </tr>
     </thead>
 
@@ -20,6 +21,9 @@
                 <td>@character.Race</td>
                 <td>@character.HomeLand</td>
                 <td>@character.Age</td>
+                <td>
+                    <a href="/Characters/Details/@character.Id">View Details</a>
+                </td>
             </tr>
         }
     </tbody>
