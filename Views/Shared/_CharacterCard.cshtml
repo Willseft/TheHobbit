@@ -1,0 +1,13 @@
+@model Character
+
+<div class="card character-card h-100">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <h6 class="card-subtitle mb-2 text-muted">@Model.Race</h6>
+        <p class="card-text">Homeland: @Model.HomeLand</p>
+        <p class="card-text">Age: @Model.Age</p>
+    </div>
+    <div class="card-footer">
+        <a href="/Characters/Details/@Model.Id">Details</a>
+    </div>
+</div>
