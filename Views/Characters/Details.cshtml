@@ -1,0 +1,13 @@
+@model Character
+
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<h1>@Model.Name</h1>
+
+<p>Race: @Model.Race</p>
+<p>Homeland: @Model.HomeLand</p>
+<p>Age: @Model.Age</p>
+
+<a href="/Characters">Back to Characters</a>
