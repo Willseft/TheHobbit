@@ -1,0 +1,31 @@
+@model Character
+
+@{
+    ViewData["Title"] = "Add Character";
+}
+
+<h1>Add Character</h1>
+
+<form asp-action="Create" method="post" class="col-md-6">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label><input asp-for="Name" class="form-control" /><span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Race" class="form-label"></label><input asp-for="Race" class="form-control" /><span asp-validation-for="Race" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="HomeLand" class="form-label"></label><input asp-for="HomeLand" class="form-control" /><span asp-validation-for="HomeLand" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Age" class="form-label"></label><input asp-for="Age" class="form-control" /><span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Character</button>
+    <a asp-action="Index" class="btn btn-link">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
