@@ -1,14 +1,23 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using TheHobbit.Models;
+using TheHobbit.Data;
 
 namespace TheHobbit.Controllers;
 
 public class HomeController : Controller
 {
+    private readonly CharacterContext _context;
+
+    public HomeController(CharacterContext context)
+    {
+        _context = context;
+    }
+
     public IActionResult Index()
     {
-        return View();
+        var featured = _context.Characters.FirstOrDefault();
+        return View(featured);
     }
 
     public IActionResult Privacy()

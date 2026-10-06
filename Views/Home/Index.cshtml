@@ -1,6 +1,7 @@
-﻿@{
+﻿@model Character
+
+@{
     ViewData["Title"] = "Home";
-    var featured = CharacterData.All.First();
 }
 
 <div class="text-center">
@@ -12,7 +13,10 @@
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col">
-        <partial name="_CharacterCard" model="featured" />
+        @if (Model != null)
+        {
+            <partial name="_CharacterCard" model="Model" />
+        }
     </div>
 </div>
 
