@@ -1,13 +1,42 @@
+
 @model Character
 
 @{
     ViewData["Title"] = Model.Name;
 }
 
-<h1>@Model.Name</h1>
+<div class="container py-4">
 
-<p>Race: @Model.Race</p>
-<p>Homeland: @Model.HomeLand</p>
-<p>Age: @Model.Age</p>
+    <a asp-action="Index" class="btn btn-outline-secondary mb-4">
+        &larr; Back to Characters
+    </a>
 
-<a href="/Characters">Back to Characters</a>
+    <h1 class="mb-4">@Model.Name</h1>
+
+    <p>Race: @Model.Race</p>
+    <p>Homeland: @Model.HomeLand</p>
+    <p>Age: @Model.Age</p>
+
+    @if (!string.IsNullOrWhiteSpace(Model.Description))
+    {
+        <div class="mt-4">
+            <h2 class="h5">Description</h2>
+            <p>@Model.Description</p>
+        </div>
+    }
+
+    <div class="d-flex gap-2 mt-4">
+        <a asp-action="Edit"
+           asp-route-id="@Model.Id"
+           class="btn btn-secondary">
+            Edit Character
+        </a>
+
+        <a asp-action="Delete"
+           asp-route-id="@Model.Id"
+           class="btn btn-danger">
+            Delete Character
+        </a>
+    </div>
+
+</div>
