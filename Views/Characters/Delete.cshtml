@@ -1,0 +1,33 @@
+
+@model Character
+
+@{
+    ViewData["Title"] = "Delete Character";
+}
+
+<h1>Delete Character</h1>
+
+<p>Are you sure you want to delete this character?</p>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <h2 class="h5">@Model.Name</h2>
+        <p>Race: @Model.Race</p>
+        <p>Homeland: @Model.HomeLand</p>
+        <p>Age: @Model.Age</p>
+    </div>
+</div>
+
+<form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit" class="btn btn-danger">
+        Delete Character
+    </button>
+
+    <a asp-action="Details"
+       asp-route-id="@Model.Id"
+       class="btn btn-secondary">
+        Cancel
+    </a>
+</form>
