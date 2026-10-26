@@ -32,6 +32,10 @@ namespace TheHobbit.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
+                    b.Property<string>("Description")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
                     b.Property<string>("HomeLand")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

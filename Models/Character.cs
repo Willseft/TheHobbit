@@ -1,3 +1,4 @@
+
 using System.ComponentModel.DataAnnotations;
 
 namespace TheHobbit.Models;
@@ -16,4 +17,8 @@ public class Character
 
     [Range(1, 10000)]
     public int Age { get; set; }
+
+    [Display(Name = "Description")]
+    [StringLength(500)]
+    public string? Description { get; set; }
 }
